@@ -17,7 +17,7 @@ public class Currency extends Conversions {
     public double convert(String toWhatCurrency){
         double result = 0.0;
         double convertCurrencyValueToUsd = 0.0;
-        String pattern = "###,###,###.##";
+        String pattern = "#.##";
         DecimalFormat df = new DecimalFormat(pattern);
 
         if (this.type == "USD"){
@@ -40,15 +40,19 @@ public class Currency extends Conversions {
             case "BTC":
                 result = xbtFromUsd(convertCurrencyValueToUsd);
                 break;
-            case"JPY":
+            case "JPY":
                 result = yenFromUsd(convertCurrencyValueToUsd);
+                break;
+            default:
+                System.out.println("Sorry, we aren't changing that currency at this time.");
+                result = this.value;
                 break;
         }
 
         Double finalResult = Double.parseDouble(df.format(result));
-        System.out.println("Converted " + this.type);
-        System.out.println("To " + toWhatCurrency);
+        System.out.println("Converted " + this.type + " to " + toWhatCurrency);
         System.out.println("Result: " + finalResult);
+        System.out.println("------------");
         return finalResult;
     }
 

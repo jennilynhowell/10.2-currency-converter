@@ -2,9 +2,9 @@ package com.jennilyn.Abstract;
 
 public abstract class Conversions {
 
-    private double yenUsdConversion = 0.00895507;
-    private double eurUsdConversion = 0.858250;
-    private double xbtUsdConversion = 2500.24;
+    private double yenUsdConversion = 0.00893526;
+    private double eurUsdConversion = 1.16457;
+    private double xbtUsdConversion = 2475.52;
 
     public double convertToUsd(double amountOfForeignCurrency, double conversionRate){
         return amountOfForeignCurrency * conversionRate;
